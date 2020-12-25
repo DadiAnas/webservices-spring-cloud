@@ -1,0 +1,19 @@
+server.port: 8081
+
+spring:
+#  application:
+#    name: customer-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://localhost:8989
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
